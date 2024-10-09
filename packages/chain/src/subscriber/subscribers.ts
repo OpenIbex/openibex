@@ -51,7 +51,7 @@ export async function subscribeContract(
   isSupportedPlatform(assetArtifact);
   checkSubscriberFactory(assetArtifact.chainId);
 
-  return await subscribeContract[assetArtifact.chainId.namespace].subscrContract(assetArtifact, eventName, callback, filters);
+  return await subscriberFactories[assetArtifact.chainId.namespace].subscribeContract(assetArtifact, eventName, callback, filters);
 }
 
 /**
